@@ -1,10 +1,16 @@
-var exp = require("express");
-var r = require("./Route/Router");
+let express = require("express");
+let r = require("./Route/Router");
+let db = require("./Connection");
+require("dotenv").config();
 
-var app = exp();
+let app = express();
 
-app.use("/", r);
+app.use("/Tab", r);
 
-app.listen(3002, () => {
-    console.log(`Server Started at http://localhost:3002`);
+db().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log(`Server started at http://localhost:${process.env.PORT}`);
+    });
+}).catch((e) => {
+    console.error("DB Connection Error:", e);
 });

@@ -13,4 +13,24 @@ let Contact = async function (req, res) {
     res.end();
 };
 
-module.exports = { Index, About, Contact };
+let FeedBack = async function (req, res) {
+    res.send("FeedBack");
+    res.end();
+};
+
+let Faq = async function (req, res) {
+    res.send("Faq");
+    res.end();
+};
+
+let Help = async function (req, res) {
+    res.send("Help");
+    res.end();
+};
+
+let PrivacyPolicy = async function (req, res) {
+    res.send("PrivacyPolicy");
+    res.end();
+};
+
+module.exports = { Index, About, Contact, FeedBack, Faq,  Help, PrivacyPolicy};
