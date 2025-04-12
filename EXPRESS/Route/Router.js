@@ -11,4 +11,6 @@ route.get("/faq", func.Faq);
 route.get("/help", func.Help);
 route.get("/privacypolicy", func.PrivacyPolicy);
 
+route.post("/save",func.save_data)
+
 module.exports = route;
